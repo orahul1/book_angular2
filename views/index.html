@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>Books</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./app/main.css">
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err) {
+            console.error(err);
+        });
+    </script>
+</head>
+<!-- 3. Display the application -->
+
+<body class="container text-center">
+    <app>
+    <style type="text/css">
+            #pre-bootstrap {
+                background-color:  #2c3e50 ;
+                bottom: 0px ;
+                left: 0px ;
+                position: fixed ;
+                right: 0px ;
+                top: 0px ;
+                z-index: 999999 ;
+                font-family: roboto;
+            }
+            #pre-bootstrap div.messaging {
+                color: #FFFFFF ;
+                font-family: monospace ;
+                left: 0px ;
+                margin-top: -37px ;
+                position: absolute ;
+                right: 0px ;
+                text-align: center ;
+                top: 50% ;
+            }
+            #pre-bootstrap h1 {
+                font-size: 40px ;
+                line-height: 35px ;
+                margin: 0px 0px 20px 0px ;
+            }
+            #pre-bootstrap p {
+                font-size: 18px ;
+                line-height: 14px ;
+                margin: 0px 0px 0px 0px ;
+            }
+        </style>
+
+        <div id="pre-bootstrap">
+            <div class="messaging">
+
+                <h1>
+                      Application is Loading..........
+                </h1>
+
+                <p>
+                    Grab a cup of coffee Bitch!
+                </p>
+
+            </div>
+        </div>
+      </app>
+</body>
+
+</html>

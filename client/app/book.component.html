@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <base href="/">
+    <title> Books </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
+        <div class="container">
+            <p id="book">BOOKS</p>
+        </div>
+    </nav><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-1">
+                    <h1> ADD </h1>
+                </div>
+                <div class="cardd card-3"><br>
+                    <form>
+                        <input class="inner" type="text" [(ngModel)]="id" name="id" placeholder="Enter id"><br>
+                        <input class="inner" type="text" [(ngModel)]="name" name="name" placeholder="Enter name"><br>
+                        <input class="inner" type="text" [(ngModel)]="author" name="author" placeholder="Enter author"><br>
+                        <button class="btn btn-sm inner" (click)="addBook()"><span>Add</span></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-1">
+                    <h1> SEARCH </h1>
+                </div>
+                <div class="card card-2">
+                    <div class="block2">
+                        <input class="inner" type="text" [(ngModel)]="searchid" name="searchid" placeholder="Enter id">
+                        <button class="btn btn-sm inner" (click)="findBook()"><span>Search</span></button>
+                    </div>
+                    <div *ngIf="onebook" else #elseblock>
+                        <div class="card card-3">
+                            <font color="#212121" size="3px"> <b> ID </b> </font>: {{onebook.id}} <br>
+                            <font color="#212121" size="3px"> <b> NAME </b> </font>: {{onebook.name}} <br>
+                            <font color="#212121" size="3px"> <b> AUTHOR </b></font>: {{onebook.author}}
+                        </div>
+                        <div #elseblock *ngIf="!onebook" > <p> Not found! </p> </div>
+                    </div>
+                
+            </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-1">
+                    <h1> LIST </h1>
+                </div><br>
+                <div *ngFor="let book of books">
+                    <div class="card card-2">
+                        <div class="col-md-8">
+                            <font color="#212121" size="3px"> <b> ID </b> </font> : {{book.id}} <br>
+                            <font color="#212121" size="3px"> <b> NAME </b> </font>: {{book.name}} <br>
+                            <font color="#212121" size="3px"> <b> AUTHOR </b></font>: {{book.author}}
+                        </div> 
+                        <div class="col-md-4">
+                            <div class="col-md-8">
+                         </div>
+                            <button class="btn2 btn-danger" name="delete" (click)="removeBook(book.id)"><span> Delete </span> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>
